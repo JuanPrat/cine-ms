@@ -1,30 +1,33 @@
 package com.poli.moviesservice.controller;
 
 import com.poli.moviesservice.entity.Movie;
+import com.poli.moviesservice.service.MoviesService;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 public class MoviesController {
 
+    MoviesService moviesService;
+
     @GetMapping("/movies")
-    public ArrayList<Movie> getAllMovies(){
-        return null;
+    public List<Movie> getAllMovies(){
+        return moviesService.getAllMovies();
     }
 
     @PostMapping("/movies")
     public Movie saveMovie(@RequestBody Movie movie){
-        return null;
+        return moviesService.saveMovie(movie);
     }
 
     @GetMapping("/movies/{id}")
     public Movie getMovieById(@PathVariable Long id){
-        return null;
+        return moviesService.getMovieById(id);
     }
 
     @DeleteMapping("/movies/{id}")
-    public Movie deleteMovieById(@PathVariable Long id){
-        return null;
+    public Long deleteMovieById(@PathVariable Long id){
+        return moviesService.deleteMovieById(id);
     }
 }

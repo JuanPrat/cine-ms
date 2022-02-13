@@ -1,10 +1,10 @@
 package com.poli.showtimesservice.entity;
 
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.UniqueConstraint;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -12,8 +12,14 @@ import java.util.Date;
 @Setter
 @Builder(toBuilder = true)
 @EqualsAndHashCode
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
 public class ShowTime {
-    Long id;
-    Date date;
-    ArrayList<Object> movies;
+    @Id
+    @NonNull
+    private Long id;
+    @NonNull
+    private Date date;
+    private ArrayList<Object> movies;
 }

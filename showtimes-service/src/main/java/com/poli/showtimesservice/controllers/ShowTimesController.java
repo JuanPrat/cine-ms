@@ -1,30 +1,34 @@
 package com.poli.showtimesservice.controllers;
 
 import com.poli.showtimesservice.entity.ShowTime;
+import com.poli.showtimesservice.service.ShowTimesService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 public class ShowTimesController {
+    @Autowired
+    ShowTimesService showTimesService;
 
     @GetMapping("/showtimes")
-    public ArrayList<ShowTime> getAllShowtimes(){
-        return null;
+    public List<ShowTime> getAllShowtimes(){
+        return showTimesService.findAll();
     }
 
     @PostMapping("/showtimes")
     public ShowTime saveShowTime(@RequestBody ShowTime showTime){
-        return null;
+        return showTimesService.saveShowTime(showTime);
     }
 
     @GetMapping("/showtimes/{id}")
     public ShowTime getShowTimeById(@PathVariable Long id){
-        return null;
+        return showTimesService.getShowTimeById(id);
     }
 
     @PutMapping("/showtimes/{id}")
-    public ShowTime updateShowTimeById(@PathVariable Long id){
-        return null;
+    public ShowTime updateShowTimeById(@PathVariable ShowTime showTime){
+        return showTimesService.updateShowTime(showTime);
     }
 }
