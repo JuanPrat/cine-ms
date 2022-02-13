@@ -12,11 +12,11 @@ import java.util.ArrayList;
 public class Booking {
     @NonNull
     @Id
-    Long id;
+    private Long id;
     @NonNull
-    Long userid;
+    private Long userid;
     @NonNull
-    Long showtimeid;
-    ArrayList<Object> movies;
+    private Long showtimeid;
+    private ArrayList<Object> movies;
 
 }
