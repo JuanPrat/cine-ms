@@ -1,12 +1,14 @@
 package com.poli.moviesservice.entity;
 
 import com.sun.istack.NotNull;
-import lombok.NonNull;
+import lombok.*;
 
 import javax.persistence.Id;
-import java.util.ArrayList;
-import java.util.Date;
 
+@Getter
+@Setter
+@Builder
+@EqualsAndHashCode
 public class Movie {
     @Id
     @NonNull

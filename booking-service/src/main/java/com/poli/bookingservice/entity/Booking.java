@@ -1,11 +1,14 @@
 package com.poli.bookingservice.entity;
 
-import lombok.NonNull;
+import lombok.*;
 
 import javax.persistence.Id;
-import javax.persistence.UniqueConstraint;
 import java.util.ArrayList;
 
+@Getter
+@Setter
+@Builder(toBuilder = true)
+@EqualsAndHashCode
 public class Booking {
     @NonNull
     @Id
