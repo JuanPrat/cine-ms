@@ -5,7 +5,7 @@ spring:
     config:
       server:
         git:
-          uri: file:///D:\Documents\ideaProjects\cine\cine\config-data-main
+          uri: file:///D:\Documents\ideaProjects\cine\cine\config-data
   security:
     user:
       name: admin
