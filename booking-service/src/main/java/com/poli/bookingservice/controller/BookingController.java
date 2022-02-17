@@ -17,7 +17,7 @@ public class BookingController {
         return null;
     }
 
-    @PostMapping("bookings")
+    @PostMapping("/bookings")
     public Booking saveBooking(@RequestBody Booking booking){
         return null;
     }

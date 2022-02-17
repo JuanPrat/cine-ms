@@ -3,4 +3,8 @@ include 'users-service'
 include 'booking-service'
 include 'movies-service'
 include 'showtimes-service'
+include 'admin'
+include 'config'
+include 'gateway'
+include 'eureka'
 
