@@ -1,0 +1,35 @@
+server:
+  port: 9202
+  servlet:
+    context-path: /store/v1
+spring:
+  application:
+    name: service-shopping
+  boot:
+    admin:
+      client:
+        url: http://localhost:9020
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:shoppingBD;
+    driver-class-name: org.h2.Driver
+    platform: h2
+    username: sa
+    password:
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9010/eureka/
+feign:
+  circuitbreaker:
+    enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always

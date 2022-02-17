@@ -24,7 +24,7 @@ public class MoviesAdapter implements MoviesInterface {
 
     @Override
     public Movie getMovieById(Long id) {
-        return moviesRepository.getById(id);
+        return moviesRepository.getOne(id);
     }
 
     @Override

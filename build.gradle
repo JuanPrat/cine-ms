@@ -1,11 +1,11 @@
 plugins {
-	id "org.springframework.boot" version "2.6.3"
-	id "io.spring.dependency-management" version "1.0.11.RELEASE"
 	id "java"
+	id "org.springframework.boot" version "${springBoot}"
+	id "io.spring.dependency-management" version "${dependencyManagement}"
 }
 
 allprojects{
-	group = "co.com.poli"
+	group = "com.cloud.workshoop"
 	version = "0.1"
 	sourceCompatibility = JavaVersion.VERSION_1_8
 
@@ -17,8 +17,8 @@ allprojects{
 subprojects{
 
 	apply plugin: "java"
-	apply plugin: "io.spring.dependency-management"
 	apply plugin: "org.springframework.boot"
+	apply plugin: "io.spring.dependency-management"
 
 	configurations {
 		compileOnly {
@@ -27,7 +27,9 @@ subprojects{
 	}
 
 	dependencies {
+
 		implementation group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
+
 		compileOnly "org.projectlombok:lombok"
 
 		developmentOnly "org.springframework.boot:spring-boot-devtools"
@@ -38,22 +40,22 @@ subprojects{
 			exclude group: "org.junit.vintage", module: "junit-vintage-engine"
 		}
 
-		testImplementation "org.junit.jupiter:junit-jupiter-api:5.7.2"
+		testImplementation "org.junit.jupiter:junit-jupiter-api:5.6.0"
 
-		testRuntimeOnly  "org.junit.jupiter:junit-jupiter-engine"
+		testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine"
+
+		// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-validation
+		implementation group: "org.springframework.boot", name: "spring-boot-starter-validation", version: "2.3.10.RELEASE"
+
 	}
 
 	test {
 		useJUnitPlatform()
 	}
 
-
+	bootJar {
+		enabled = true
+	}
 }
 
-bootJar {
-	enabled = false
-}
 
-jar {
-	enabled = true
-}
