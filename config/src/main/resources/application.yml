@@ -5,10 +5,10 @@ spring:
     config:
       server:
         git:
-          uri: file:///C:/Users/Jonat/Desktop/CloudProject/config-data
+          uri: file:///D:\Documents\ideaProjects\cine\cine\config-data-main
   security:
     user:
-      name: ${USER}
-      password: ${PASS}
+      name: admin
+      password: 1234
 server:
   port: 9000
