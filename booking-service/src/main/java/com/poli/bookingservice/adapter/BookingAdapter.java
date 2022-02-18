@@ -24,7 +24,7 @@ public class BookingAdapter implements BookingInterface {
 
     @Override
     public Booking getBookingById(Long id) {
-        return bookingRepository.getById(id);
+        return bookingRepository.getOne(id);
     }
 
     @Override

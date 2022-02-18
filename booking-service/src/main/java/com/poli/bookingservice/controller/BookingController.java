@@ -1,39 +1,36 @@
 package com.poli.bookingservice.controller;
 
 import com.poli.bookingservice.entity.Booking;
-import jdk.nashorn.internal.objects.annotations.Getter;
+import com.poli.bookingservice.service.BookingService;
 import org.springframework.web.bind.annotation.*;
 
-import java.awt.print.Book;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
+import java.util.List;
 
 @RestController
 public class BookingController {
 
+    BookingService bookingService;
+
     @GetMapping("/bookings")
-    public ArrayList<Booking> getBookings(){
-        return null;
+    public List<Booking> getBookings(){
+        return bookingService.getBookings();
     }
 
     @PostMapping("/bookings")
     public Booking saveBooking(@RequestBody Booking booking){
-        return null;
+        return bookingService.saveBooking(booking);
     }
 
     @GetMapping("/bookings/{id}")
     public Booking getBookingById(@PathVariable Long id){
-        return null;
+        return bookingService.getBookingById(id);
     }
 
     @DeleteMapping("/bookings/{id}")
-    public Booking deleteBookingById(@PathVariable Long id){
-        return null;
-    }
+    public Long deleteBookingById(@PathVariable Long id){return bookingService.deleteBooking(id);}
 
     @GetMapping("/bookings/{userId}")
-    public Booking getBookingByUserId(@PathVariable Long id){
-        return null;
+    public Booking getBookingByUserId(@PathVariable Long userId){
+        return bookingService.getBookingByUserId(userId);
     }
 }

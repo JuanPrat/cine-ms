@@ -2,8 +2,8 @@ package com.poli.bookingservice.entity;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 
 @Getter
@@ -13,13 +13,17 @@ import java.util.ArrayList;
 @Data
 @Entity
 public class Booking {
-    @NonNull
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @NotNull(message = "Not null")
+    @Column(unique = true, nullable = false)
     private Long id;
-    @NonNull
-    private Long userId;
-    @NonNull
-    private Long showtimeid;
-    private ArrayList<Object> movies;
 
+    @NotNull(message = "Not null")
+    private Long userid;
+
+    @NotNull(message = "Not null")
+    private Long showtimeid;
+
+    private ArrayList<Object> movies;
 }
