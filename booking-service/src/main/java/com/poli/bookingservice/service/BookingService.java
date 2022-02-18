@@ -2,9 +2,11 @@ package com.poli.bookingservice.service;
 
 import com.poli.bookingservice.contracts.BookingInterface;
 import com.poli.bookingservice.entity.Booking;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class BookingService {
 
     BookingInterface bookingInterface;
@@ -24,5 +26,4 @@ public class BookingService {
     public Booking getBookingByUserId(Long userId) {
         return bookingInterface.getBookingByUserId(userId);
     }
-
 }
