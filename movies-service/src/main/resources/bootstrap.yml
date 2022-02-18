@@ -1,6 +1,6 @@
 spring:
   application:
-    name: moviesMs
+    name: movies-service
   cloud:
     config:
       uri: http://localhost:9000

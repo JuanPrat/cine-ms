@@ -20,7 +20,7 @@ public class Booking {
     private Long id;
 
     @NotNull(message = "Not null")
-    private Long userid;
+    private Long userId;
 
     @NotNull(message = "Not null")
     private Long showtimeid;
