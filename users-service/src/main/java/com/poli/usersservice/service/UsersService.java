@@ -1,5 +1,6 @@
 package com.poli.usersservice.service;
 
+import com.poli.usersservice.client.BookingClient;
 import com.poli.usersservice.contracts.UsersContract;
 import com.poli.usersservice.entity.User;
 import lombok.AllArgsConstructor;
@@ -11,6 +12,9 @@ import java.util.List;
 
 @Service
 public class UsersService {
+
+    @Autowired
+    BookingClient bookingClient;
 
     @Autowired
     private UsersContract usersContract;
@@ -27,6 +31,12 @@ public class UsersService {
 
 
     public Long deleteUser(Long id) {
-        return usersContract.deleteUser(id);
+        List bookings = (List)bookingClient.getBookingByUserId(id).getBody();
+        if(bookings.size() > 0){
+            return null;
+        }
+        else {
+            return usersContract.deleteUser(id);
+        }
     }
 }

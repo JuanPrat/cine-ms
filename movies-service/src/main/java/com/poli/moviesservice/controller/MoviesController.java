@@ -2,6 +2,7 @@ package com.poli.moviesservice.controller;
 
 import com.poli.moviesservice.entity.Movie;
 import com.poli.moviesservice.service.MoviesService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -9,6 +10,7 @@ import java.util.List;
 @RestController
 public class MoviesController {
 
+    @Autowired
     MoviesService moviesService;
 
     @GetMapping("/movies")

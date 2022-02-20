@@ -20,12 +20,11 @@ import java.util.Date;
 public class ShowTime {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @NotNull(message = "Not null")
     @Column(unique = true, nullable = false)
     private Long id;
 
     @NotNull(message = "Not null")
     private Date date;
 
-    private ArrayList<Object> movies;
+    private ArrayList<Movie> movies;
 }

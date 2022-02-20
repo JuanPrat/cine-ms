@@ -3,6 +3,7 @@ package com.poli.showtimesservice.adapters;
 import com.poli.showtimesservice.contracts.ShowTimesInterface;
 import com.poli.showtimesservice.entity.ShowTime;
 import com.poli.showtimesservice.repository.ShowTimesRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.Collections;
@@ -12,6 +13,7 @@ import java.util.List;
 @Repository
 public class ShowTimesAdapter implements ShowTimesInterface {
 
+    @Autowired
     ShowTimesRepository showTimesRepository;
 
     @Override

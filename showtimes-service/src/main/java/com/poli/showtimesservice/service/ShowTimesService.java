@@ -2,6 +2,7 @@ package com.poli.showtimesservice.service;
 
 import com.poli.showtimesservice.contracts.ShowTimesInterface;
 import com.poli.showtimesservice.entity.ShowTime;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,6 +10,7 @@ import java.util.List;
 @Service
 public class ShowTimesService{
 
+    @Autowired
     ShowTimesInterface showTimesInterface;
 
     public List<ShowTime> findAll() {

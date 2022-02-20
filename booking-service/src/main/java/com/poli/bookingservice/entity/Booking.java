@@ -15,10 +15,11 @@ import java.util.ArrayList;
 @EqualsAndHashCode
 @Data
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @NotNull(message = "Not null")
     @Column(unique = true, nullable = false)
     private Long id;
 
@@ -27,5 +28,6 @@ public class Booking {
 
     @NotNull(message = "Not null")
     private Long showtimeId;
+
     private ArrayList<Object> movies;
 }

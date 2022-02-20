@@ -20,7 +20,6 @@ import javax.validation.constraints.NotNull;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @NotNull(message = "Not null")
     @Column(unique = true, nullable = false)
     private Long id;
 

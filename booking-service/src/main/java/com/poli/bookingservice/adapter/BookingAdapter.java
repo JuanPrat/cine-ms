@@ -1,15 +1,19 @@
 package com.poli.bookingservice.adapter;
 
+import com.netflix.discovery.converters.Auto;
 import com.poli.bookingservice.contracts.BookingInterface;
 import com.poli.bookingservice.entity.Booking;
 import com.poli.bookingservice.repository.BookingRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.awt.print.Book;
 import java.util.List;
 
 @Repository
 public class BookingAdapter implements BookingInterface {
 
+    @Autowired
     BookingRepository bookingRepository;
 
     @Override
@@ -24,7 +28,7 @@ public class BookingAdapter implements BookingInterface {
 
     @Override
     public Booking getBookingById(Long id) {
-        return bookingRepository.getOne(id);
+        return bookingRepository.findById(id).orElse(null);
     }
 
     @Override
