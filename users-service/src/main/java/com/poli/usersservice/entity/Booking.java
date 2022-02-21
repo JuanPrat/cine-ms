@@ -2,32 +2,31 @@ package com.poli.usersservice.entity;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Column;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
 
 @Getter
 @Setter
 @Builder(toBuilder = true)
 @EqualsAndHashCode
-@Entity
 @Data
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
     private Long id;
 
-    @NotNull(message = "No puede estar en blanco")
+    @NotNull(message = "Not null")
     @Column
-    private String name;
+    private Long userId;
 
-    @NotNull(message = "No puede estar en blanco")
+    @NotNull(message = "Not null")
     @Column
-    private String lastName;
+    private Long showtimeId;
+
+    private ArrayList<Long> movies;
 }

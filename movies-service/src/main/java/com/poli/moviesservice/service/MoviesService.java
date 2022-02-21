@@ -2,12 +2,14 @@ package com.poli.moviesservice.service;
 
 import com.poli.moviesservice.contracts.MoviesInterface;
 import com.poli.moviesservice.entity.Movie;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class MoviesService  {
 
     @Autowired

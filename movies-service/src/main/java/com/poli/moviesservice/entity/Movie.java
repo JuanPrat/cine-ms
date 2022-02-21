@@ -27,13 +27,15 @@ public class Movie {
     private Long id;
 
     @NotNull(message = "No puede estar en blanco")
+    @Column
     private String title;
 
     @NotNull(message = "No puede estar en blanco")
+    @Column
     private String director;
 
     @Column
-    @Min(value = 1, message = "el rating debe de ser mayor a 1")
-    @Max(value = 5, message = "el rating debe de ser menor a 5")
+    @Min(value = 0, message = "el rating debe de ser mayor a 0")
+    @Max(value = 5, message = "el rating debe de ser menor a 6")
     private Integer rating;
 }

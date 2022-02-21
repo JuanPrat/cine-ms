@@ -24,10 +24,12 @@ public class Booking {
     private Long id;
 
     @NotNull(message = "Not null")
+    @Column
     private Long userId;
 
     @NotNull(message = "Not null")
+    @Column
     private Long showtimeId;
 
-    private ArrayList<Object> movies;
+    private ArrayList<Long> movies;
 }

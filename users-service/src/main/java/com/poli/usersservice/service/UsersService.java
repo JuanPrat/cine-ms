@@ -11,14 +11,14 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class UsersService {
 
     @Autowired
-    BookingClient bookingClient;
+    private BookingClient bookingClient;
 
     @Autowired
     private UsersContract usersContract;
-
 
     public List<User> findAll() {
         return usersContract.findAll();
