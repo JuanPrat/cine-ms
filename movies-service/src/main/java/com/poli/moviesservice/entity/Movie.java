@@ -22,7 +22,6 @@ import javax.validation.constraints.NotNull;
 public class Movie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @NotNull(message = "Not null")
     @Column(unique = true, nullable = false)
     private Long id;
 

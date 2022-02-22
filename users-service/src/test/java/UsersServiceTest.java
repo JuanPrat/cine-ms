@@ -57,17 +57,6 @@ public class UsersServiceTest {
     }
 
     @Test
-    public void deleteUserDoesNotDeleteTest() {
-        ArrayList<Long> idsPeliculas = new ArrayList<>();
-        idsPeliculas.add(1L);
-        idsPeliculas.add(2L);
-        ResponseEntity responseEntity = ResponseEntity.accepted().body(idsPeliculas);
-        Mockito.when(bookingClient.getBookingByUserId(1214L)).thenReturn(responseEntity);
-        Object resultado = usersServiceUnderTest.deleteUser(1214L);
-        Assert.assertEquals(resultado, null);
-    }
-
-    @Test
     public void deleteUserTest() {
         ArrayList<Long> idsPeliculas = new ArrayList<>();
         ResponseEntity responseEntity = ResponseEntity.accepted().body(idsPeliculas);

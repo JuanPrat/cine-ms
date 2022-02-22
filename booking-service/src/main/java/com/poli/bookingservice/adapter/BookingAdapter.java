@@ -39,6 +39,6 @@ public class BookingAdapter implements BookingInterface {
 
     @Override
     public Booking getBookingByUserId(Long userId) {
-        return bookingRepository.deleteByUserId(userId);
+        return bookingRepository.findByUserId(userId);
     }
 }

@@ -27,8 +27,8 @@ public class ShowTimesController {
         return showTimesService.getShowTimeById(id);
     }
 
-    @PutMapping("/showtimes/{id}")
-    public ShowTime updateShowTimeById(@PathVariable ShowTime showTime){
+    @PutMapping("/showtimes")
+    public ShowTime updateShowTimeById(@RequestBody ShowTime showTime){
         return showTimesService.updateShowTime(showTime);
     }
 }

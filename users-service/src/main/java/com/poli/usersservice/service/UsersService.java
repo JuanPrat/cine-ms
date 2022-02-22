@@ -31,12 +31,6 @@ public class UsersService {
 
 
     public Long deleteUser(Long id) {
-        List bookings = (List)bookingClient.getBookingByUserId(id).getBody();
-        if(bookings.size() > 0){
-            return null;
-        }
-        else {
             return usersContract.deleteUser(id);
-        }
     }
 }
